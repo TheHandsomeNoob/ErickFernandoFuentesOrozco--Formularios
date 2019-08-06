@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cotizacion de Vehiulo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <script>
+
+        function iniciarC() {
+            dato11 = document.getElementById("nombre");
+            dato22 = document.getElementById("dpi");
+            dato33 = document.getElementById("fecha");
+            dato44 = document.getElementById("direccion");
+            dato55 = document.getElementById("modelo");
+            dato66 = document.getElementById("marca");
+            dato11.addEventListener("input", validacion, false);
+            dato22.addEventListener("input", validacion, false);
+            dato33.addEventListener("input", validacion, false);
+            dato44.addEventListener("input", validacion, false);
+            dato55.addEventListener("input", validacion, false);
+            dato66.addEventListener("input", validacion, false);
+
+            validacionC();
+        }
+
+        function validacionC() {
+            if (dato11.value == '' && dato22.value == '' && dato33.value == '' && dato44.value == '' && dato55.value == '' && dato66.value == '') {
+                dato11.setCustomValidity('Nombre Completo Requerido');
+                dato22.setCustomValidity('DPI Requerido');
+                dato33.setCustomValidity('Fecha de Vencimiento Requerida');
+                dato55.setCustomValidity('Modelo Requerido');
+                dato66.setCustomValidity('Marca Requerida');
+                dato44.setCustomValidity('Direccion Requerida');
+                dato11.style.background = '#FFDDDD';
+                dato22.style.background = '#FFDDDD';
+                dato33.style.background = '#FFDDDD';
+                dato44.style.background = '#FFDDDD';
+                dato55.style.background = '#FFDDDD';
+                dato66.style.background = '#FFDDDD';
+            } else {
+
+                dato11.setCustomValidity('');
+                dato22.setCustomValidity('');
+                dato33.setCustomValidity('');
+                dato44.setCustomValidity('');
+                dato55.setCustomValidity('');
+                dato66.setCustomValidity('');
+                dato11.Style.background = '#FFFFFF';
+                dato22.Style.background = '#FFFFFF';
+                dato33.Style.background = '#FFFFFF';
+                dato44.Style.background = '#FFFFFF';
+                dato55.Style.background = '#FFFFFF';
+                dato66.Style.background = '#FFFFFF';
+            }
+        }
+        window.addEventListener('load', iniciar, false);
+    </script>
+</head>
+
+<body>
+
+    <head>
+        <h1>Cotizacion</h1>
+    </head>
+
+    <div class="div">
+        <a class="btn btn-primary" href="index.html" role="button">Inicio</a>
+    </div>
+    <form role="form">
+    
+    
+        <div class="form-group">
+            <label for="marca">Marca</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese Marca">
+        </div>
+
+       
+            <div class="form-group">
+                <label for="modelo">Modelo</label>
+                <input type="text" class="form-control" id="modelo" placeholder="Ingrese Modelo">
+            </div>
+
+            <div class="estado">Estado</div>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Nuevo
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Usado
+                </label>
+            </div>
+
+            <div class="tipo">Manejo</div>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Mecanico
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Automatico
+                </label>
+            </div>
+
+            <p>
+                <h3>Informacion del Cliente</h3>
+            </p>
+
+        
+                <div class="form-group">
+                    <label for="Nombre">Nombre Completo</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese Nombre Completo">
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label for="No.DPI">DPI</label>
+                    <input pattern="[0-9]{13}" class="form-control" id="dpi" placeholder="DPI">
+                </div>
+                <div class="form-group">
+                    <label for="Nombre">Vencimiento de Licencia</label>
+                    <input type="date" name="fecha" id="fecha" placeholder="Ingresar Fecha de Vencimiento">
+                </div>
+
+                <label for="genero">Genero</label>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked>
+                        Masculino
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> Femenino
+                    </label>
+                </div>
+                <div class="estado">Estado Civil</div>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Casado/a
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> Soltero/a
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> Viudo/a
+                    </label>
+                </div>
+                
+                    <div class="form-group">
+                        <label for="direccion">Direccion</label>
+                        <input type="text" class="form-control" id="dieccion" placeholder="Ingrese Direccion">
+                    </div>
+
+                    <label for="genero">Seguro</label>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+                        <label class="btn btn-secondary active">
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Si
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option2" autocomplete="off"> No
+                        </label>
+                    </div>
+                    <div class="listo"></div>
+
+
+
+                    <input class="btn btn-primary" type="submit" value="Solicitar Cotizacion">
+                </form>
+
+                </div>
+
+
+                <script src="http://code.jquery.com/jquery.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

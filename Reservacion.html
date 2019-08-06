@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reservacion de Hotel</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <script>
+
+        function iniciarR() {
+
+            dato1 = document.getElementById("nombre");
+            dato2 = document.getElementById("dpi");
+            dato3 = document.getElementsByClassName("tipo")
+            dato4= document.getElementById("telefono");
+            dato5= document.getElementById("fecha1");
+            dato6= document.getElementById("fecha2");
+            dato7= document.getElementById("tarjeta");
+            dato8= document.getElementById("titular");
+            dato1.addEventListener("input", validacion, false);
+            dato2.addEventListener("input", validacion, false);
+            dato3.addEventListener("input", validacion, false);
+            dato4.addEventListener("input", validacion, false);
+            dato5.addEventListener("input", validacion, false);
+            dato6.addEventListener("input", validacion, false);
+            dato7.addEventListener("input", validacion, false);
+            dato8.addEventListener("input", validacion, false);
+
+            validacionR();
+        }
+        function validacionR() {
+            if (dato1.value == '' && dato2.value == '' && dato3.value == '' && dato4.value == '' && dato5.value == ''&& dato6.value == ''&& dato7.value == ''&& dato8.value == '') {
+                dato1.setCustomValidity('Nombre Completo Requerido');
+                dato2.setCustomValidity('DPI Requerido');
+                dato3.setCustomValidity('Habiatacion Requerida');
+                dato4.setCustomValidity('Telefono Requerido');
+                dato5.setCustomValidity('Fecha de Check In Requerida');
+                dato6.setCustomValidity('Fecha de Check Out Requerida');
+                dato5.setCustomValidity('Numeracion de Tarjeta de Credito Requerida');
+                dato5.setCustomValidity('Titular de Tarjeta Requerido');
+                dato1.style.background = '#FFDDDD';
+                dato2.style.background = '#FFDDDD';
+                dato3.style.background = '#FFDDDD';
+                dato4.style.background = '#FFDDDD';
+                dato5.style.background = '#FFDDDD';
+                dato6.style.background = '#FFDDDD';
+                dato7.style.background = '#FFDDDD';
+                dato8.style.background = '#FFDDDD';
+            } else {
+
+                dato1.setCustomValidity('');
+                dato2.setCustomValidity('');
+                dato3.setCustomValidity('');
+                dato4.setCustomValidity('');
+                dato5.setCustomValidity('');
+                dato1.Style.background = '#FFFFFF';
+                dato2.Style.background = '#FFFFFF';
+                dato3.Style.background = '#FFFFFF';
+                dato4.Style.background = '#FFFFFF';
+                dato5.Style.background = '#FFFFFF';
+            }
+        }
+        window.addEventListener('load', iniciar, false);
+
+    </script>
+</head>
+
+<body>
+
+    <head>
+        <h1>
+            Reserva de Hotel
+        </h1>
+    </head>
+
+    <div class="div">
+        <a class="btn btn-primary" href="index.html" role="button">Inicio</a>
+
+    </div>
+    <form role="form">
+
+        <div class="tipo">Tipo de Habitacion</div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Individual
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2" autocomplete="off"> Doble
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option3" autocomplete="off"> Suite
+            </label>
+            
+            <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option4" autocomplete="off"> Triple
+                </label>
+                
+            <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option5" autocomplete="off"> Nupcial
+                </label>
+        </div>
+
+        <div class="form-group">
+                <label for="Nombre">Check In</label>
+                <input type="date" name="fecha" id="fecha1" placeholder="Ingresar Fecha de Llegada">
+            </div>
+
+            <div class="form-group">
+                    <label for="Nombre">Chek Out</label>
+                    <input type="date" name="fecha" id="fecha2" placeholder="Ingresar Fecha de Salida">
+                </div>
+
+        <h1>Ingresar Datos</h1>
+
+        <div class="form-group">
+            <label for="Nombre">Nombre Completo</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese Nombre Completo">
+        </div>
+
+        <div class="form-group">
+            <label for="No.DPI">DPI</label>
+            <input pattern="[0-9]{13}" class="form-control" id="dpi" placeholder="Ingrese DPI">
+        </div>
+       
+        <div class="form-group">
+            <label for="telefono">Numero de Telefono</label>
+            <input type="tel" class="form-control" id="telefono" placeholder="Ingrese Numero de Telefono">
+        </div>
+        <div class="form-group">
+                <label for="telefono">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingrese Correo Electronico">
+        </div>
+        <div class="form-group">
+                <label for="No.Tarjeta de Credito">Numero de Tarjeta de Credito</label>
+                <input pattern="[0-9]{16}" class="form-control" id="tarjeta" placeholder="Ingrese Numero de Tarjeta de Credito"  >
+            </div>    
+            <div class="form-group">
+                    <label for="titular">Nombre Completo</label>
+                    <input type="text" class="form-control" id="titular" placeholder="Ingrese Titular de Tarjeta de Credito">
+                </div>
+
+
+        </div>
+        <div class="div">
+
+        </div>
+        <div class="listo">Enviar Informacion</div>
+        <input class="btn btn-primary" type="submit" value="Enviar">
+    </form>
+
+
+    <!-- Librería jQuery requerida por los plugins de JavaScript -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+
+    <!-- Todos los plugins JavaScript de Bootstrap (también puedes
+         incluir archivos JavaScript individuales de los únicos
+         plugins que utilices) -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

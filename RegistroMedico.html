@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registro Medico</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <script>
+
+        function iniciar() {
+
+            dato1 = document.getElementById("nombre");
+            dato2 = document.getElementById("dpi");
+            dato3 = document.getElementById("telefono");
+            dato4 = document.getElementById("edad");
+            dato5 = document.getElementById("direccion");
+            dato1.addEventListener("input", validacion, false);
+            dato2.addEventListener("input", validacion, false);
+            dato3.addEventListener("input", validacion, false);
+            dato4.addEventListener("input", validacion, false);
+            dato5.addEventListener("input", validacion, false);
+            validacion();
+        }
+        function validacion() {
+            if (dato1.value == '' && dato2.value == '' && dato3.value == '' && dato4.value == '' && dato5.value == '') {
+                dato1.setCustomValidity('Nombre Completo Requerido');
+                dato2.setCustomValidity('DPI Requerido');
+                dato3.setCustomValidity('Telefono Requerido');
+                dato4.setCustomValidity('Edad Requerida');
+                dato5.setCustomValidity('Direccion Requerida');
+                dato1.style.background = '#FFDDDD';
+                dato2.style.background = '#FFDDDD';
+                dato3.style.background = '#FFDDDD';
+                dato4.style.background = '#FFDDDD';
+                dato5.style.background = '#FFDDDD';
+            } else {
+
+                dato1.setCustomValidity('');
+                dato2.setCustomValidity('');
+                dato3.setCustomValidity('');
+                dato4.setCustomValidity('');
+                dato5.setCustomValidity('');
+                dato1.Style.background = '#FFFFFF';
+                dato2.Style.background = '#FFFFFF';
+                dato3.Style.background = '#FFFFFF';
+                dato4.Style.background = '#FFFFFF';
+                dato5.Style.background = '#FFFFFF';
+            }
+        }
+        window.addEventListener('load', iniciar, false);
+
+    </script>
+</head>
+
+<body>
+
+    <head>
+        <h1>
+            Registro Medico
+        </h1>
+    </head>
+
+<div class="div">
+        <a class="btn btn-primary"
+        href="index.html"
+        role="button">Inicio</a>
+
+</div>
+    <form role="form">
+        <div class="form-group">
+            <label for="Nombre">Nombre Completo</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese Nombre Completo">
+        </div>
+
+        <div class="form-group">
+            <label for="No.DPI">DPI</label>
+            <input pattern="[0-9]{13}" class="form-control" id="dpi" placeholder="Ingrese DPI"  >
+        </div>
+        <label for="Nombre">Genero</label>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Masculino
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2" autocomplete="off"> Femenino
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" class="form-control" id="edad" placeholder="Ingrese Edad">
+        </div>
+        <div class="estado">Estado Civil</div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Casado/a
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2" autocomplete="off"> Soltero/a
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option3" autocomplete="off"> Viudo/a
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Direccion</label>
+            <input type="text" class="form-control" id="direccion" placeholder="Ingrese Direccion">
+        </div>
+        <div class="form-group">
+            <label for="telefono">Numero de Telefono</label>
+            <input type="tel" class="form-control" id="telefono" placeholder="Ingrese Numero de Telefono">
+        </div>
+        <div class="form-group">
+            <label for="ocupacion">Ocupacion</label>
+            <input type="text" class="form-control" id="ocupacion" placeholder="Ingrese Ocupacion">
+        </div>
+        <div class="iggs">IGGS</div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Si
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2" autocomplete="off"> No
+            </label>
+        </div>
+        <div class="div">
+
+        </div>
+        <div class="listo">Enviar Informacion</div>
+        <input class="btn btn-primary" type="submit" value="Enviar">
+    </form>
+
+
+    <!-- Librería jQuery requerida por los plugins de JavaScript -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+
+    <!-- Todos los plugins JavaScript de Bootstrap (también puedes
+         incluir archivos JavaScript individuales de los únicos
+         plugins que utilices) -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
